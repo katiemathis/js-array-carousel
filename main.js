@@ -6,12 +6,3 @@ const images = [
     'img/05.jpg'
 ];
 
-let slides = ""
-
-for (let i = 0; i < images.length; i ++) {
-    slides += 
-    `<div class="image-container">
-    <img src="$(images[i])">
-    </div>`;
-
-}
