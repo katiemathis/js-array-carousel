@@ -22,8 +22,8 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-const itemsRef = document.getElementsByClassName('items')[0];
-const thumbsRef = document.getElementsByClassName('thumbs')[0];
+const itemsRef = document.getElementsByClassName('gallery')[0];
+const thumbsRef = document.getElementsByClassName('thumbnails')[0];
 let item = '';
 let thumb = '';
 let active = 1;
