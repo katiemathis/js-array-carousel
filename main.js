@@ -25,20 +25,22 @@ const text = [
 
 const imageReference = document.getElementsByClassName('gallery')[0];
 const thumbnailsReference = document.getElementsByClassName('lineup')[0];
-let image = '';
+let slider = '';
 let thumbnails = ''; //why are we using a string here?
 let active = 1;
 
 //the for loop here serves as a way to make sure all images are in the document using js
 
 for (let i = 0; i < images.length; i++) {
-    image += `
+    slider += `
         <div class="slider">
             <img src="${images[i]}" alt="">
             <div class="text">
                 <h3>${place[i]}</h3>
                 <p>${text[i]}</p>
-            </div>`
+            </div>
+        </div>
+    `
     thumbnails += `
         <div class="thumbnails">
             <img src="${images[i]}" alt="">
@@ -46,7 +48,7 @@ for (let i = 0; i < images.length; i++) {
     `
 }
 
-imageReference.innerHTML = image;
+imageReference.innerHTML = slider;
 document.getElementsByClassName('slider')[active].classList.add('active');
 
 thumbnailsReference.innerHTML += thumbnails;
