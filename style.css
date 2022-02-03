@@ -10,17 +10,13 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    background-color: aquamarine;
 }
 
 .gallery {
     background-color: red;
     width: 78%;
     height: 300px;
-    /*left: 30%;
-    top: 50%;
-    position: absolute;
-    transform: translate(-30%,-50%);*/
+
 }
 
 .slider {
@@ -49,12 +45,6 @@
 
 .lineup {
     height: 300px;
-    /*width: 200px;
-    right: 20%;
-    top: 50%;
-    transform: translate(40%,-50%);
-    display: flex;
-    flex-direction: column;*/
     background-color: black;
     position: relative;
 }
@@ -62,7 +52,7 @@
 .thumbnails {
     height: calc((300px) / 5);
     opacity: 0.5;
-    /*width: 100%;*/
+
 }
 
 .thumbnails img {
