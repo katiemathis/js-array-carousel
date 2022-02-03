@@ -25,7 +25,7 @@ const text = [
 
 const imageReference = document.getElementsByClassName('gallery')[0];
 const thumbnailsReference = document.getElementsByClassName('lineup')[0];
-let image ='';
+let image = '';
 let thumbnails = ''; //why are we using a string here?
 let active = 1;
 
@@ -52,7 +52,7 @@ document.getElementsByClassName('slider')[active].classList.add('active');
 thumbnailsReference.innerHTML += thumbnails;
 document.getElementsByClassName('thumbnails')[active].classList.add('active');
 
-//confront the css and html you have in place with the solution below
+//confront the css and html you have in place with the solution
 const prev = document.querySelector('.prev');
 prev.addEventListener('click', function() {
     if(active == 0) {                                                                   
@@ -65,6 +65,25 @@ prev.addEventListener('click', function() {
         document.getElementsByClassName('thumbnails')[active].classList.add('active');
     } else if(active < images.length) {
         --active
+        document.querySelector('.slider.active').classList.remove('active');
+        document.getElementsByClassName('slider')[active].classList.add('active');
+
+        document.querySelector('.thumbnails.active').classList.remove('active');
+        document.getElementsByClassName('thumbnails')[active].classList.add('active');
+    } 
+});
+
+const next = document.querySelector('.next');
+next.addEventListener('click', function() {
+    if(active < images.length - 1) {                                                                    
+        ++active
+        document.querySelector('.slider.active').classList.remove('active');
+        document.getElementsByClassName('slider')[active].classList.add('active');
+
+        document.querySelector('.thumbnails.active').classList.remove('active');
+        document.getElementsByClassName('thumbnails')[active].classList.add('active');
+    } else if(active == images.length) {
+        active = 0;
         document.querySelector('.slider.active').classList.remove('active');
         document.getElementsByClassName('slider')[active].classList.add('active');
 
