@@ -13,7 +13,6 @@
 }
 
 .gallery {
-    background-color: red;
     width: 78%;
     height: 300px;
 
@@ -45,7 +44,6 @@
 
 .lineup {
     height: 300px;
-    background-color: black;
     position: relative;
 }
 
