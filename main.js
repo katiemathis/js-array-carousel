@@ -1,4 +1,4 @@
-const items = [
+const images = [
     'img/01.jpg',
     'img/02.jpg',
     'img/03.jpg',
@@ -6,7 +6,7 @@ const items = [
     'img/05.jpg'
 ];
 
-const title = [
+const place = [
     'Svezia',
     'Svizzera',
     'Gran Bretagna',
@@ -14,77 +14,18 @@ const title = [
     'Paradise'
 ]
 
-const text = [
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
-    'Lorem ipsum',
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
-    'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+
+const text [
+    'This is some text',
+    'This is more text and I want you to know how beautiful this place is',
+    'This place is also beautiful',
+    'Why are you not booking a ticket right now to this beautiful place?',
+    'This is your final chance to look at this beautiful picture before you go to the next one. You are missing out if you cannot understand that you must travel immediately to this place.'
 ]
 
-const itemsRef = document.getElementsByClassName('gallery')[0];
-const thumbsRef = document.getElementsByClassName('thumbnails')[0];
-let item = '';
-let thumb = '';
+const imageReference = document.getElementsByClassName('gallery')[0];
+const thumbnailsReference = document.getElementsByClassName('thumbnails')[0];
+let image ='';
+let thumbnails = ''; //why are we using a string here?
 let active = 1;
 
-for (let i = 0; i < items.length; i++) {
-    item += `
-        <div class="item">
-            <img src="${items[i]}" alt="">
-            <div class="text">
-                <h3>${title[i]}</h3>
-                <p>${text[i]}</p>
-            </div>
-        </div>`
-    thumb += `
-        <div class="thumb">
-            <img src="${items[i]}" alt="">
-        </div>
-    `
-}
-
-itemsRef.innerHTML = item;
-document.getElementsByClassName('item')[active].classList.add('active');
-
-thumbsRef.innerHTML += thumb;
-document.getElementsByClassName('thumb')[active].classList.add('active');
-
-const prev = document.querySelector('.prev');
-prev.addEventListener('click', function() {
-    if(active == 0) {                                                                   
-        active = items.length - 1; 
-
-        document.querySelector('.item.active').classList.remove('active');
-        document.getElementsByClassName('item')[active].classList.add('active');
-
-        document.querySelector('.thumb.active').classList.remove('active');
-        document.getElementsByClassName('thumb')[active].classList.add('active');
-    } else if(active < items.length) {
-        --active
-        document.querySelector('.item.active').classList.remove('active');
-        document.getElementsByClassName('item')[active].classList.add('active');
-
-        document.querySelector('.thumb.active').classList.remove('active');
-        document.getElementsByClassName('thumb')[active].classList.add('active');
-    } 
-});
-
-const next = document.querySelector('.next');
-next.addEventListener('click', function() {
-    if(active < items.length - 1) {
-        ++active
-        document.querySelector('.item.active').classList.remove('active');
-        document.getElementsByClassName('item')[active].classList.add('active');
-
-        document.querySelector('.thumb.active').classList.remove('active');
-        document.getElementsByClassName('thumb')[active].classList.add('active');
-    } else if(active == items.length - 1) { 
-        active = 0;
-        document.querySelector('.item.active').classList.remove('active');
-        document.getElementsByClassName('item')[active].classList.add('active');
-
-        document.querySelector('.thumb.active').classList.remove('active');
-        document.getElementsByClassName('thumb')[active].classList.add('active');
-    }
-});
